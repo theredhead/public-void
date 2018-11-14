@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-title>
+      <a [attr.href]="project.href ? project.href : null">{{project.name}}</a>
+  </mat-card-title>
+  <mat-card-content>
+    <p>
+      {{project.description}}
+    </p>
+    </mat-card-content>
+    <mat-card-footer>	
+    <div *ngIf="project.demo">
+      <a href="{{project.demo}}">(demo)</a>
+    </div>
+    <div *ngFor="let author of project.authors || []">
+
+      <a class="PersonBadge" [attr.href]="author.email ? mailto(author.email) : null">
+          <gravatar *ngIf="author.email"
+          [email]="author.email"
+          [iconSize]="24"
+        ></gravatar>
+        <span *ngIf="author.name">{{author.name}}</span>
+      </a>
+
+    </div>
+  </mat-card-footer>	
+</mat-card>
