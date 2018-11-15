@@ -4,7 +4,8 @@
         [routerLink]="'/' + link.path" 
         routerLinkActive #rla="routerLinkActive"
         [active]="rla.isActive">
-        {{link.label}}
+        <mat-icon *ngIf="link.icon">{{link.icon}}</mat-icon>
+        <span *ngIf="link.label">{{link.label}}</span>
     </a>
 </nav>
 

@@ -2,28 +2,25 @@
   <mat-card-title>
     <a [attr.href]="project.href ? project.href : null">{{project.name}}</a>
   </mat-card-title>
-  
+
   <mat-card-content>
     <div [innerHTML]="project.description | md"></div>
+
+    <div *ngIf="project.demo" style="text-align: right;">
+      <a href="{{project.demo}}">{{project.name}}} demo</a>
+    </div>
   </mat-card-content>
 
-  <mat-card-footer>
-    <div *ngIf="project.demo" style="text-align: right;">
-      <a href="{{project.demo}}">(demo)</a>
-    </div>
+  <mat-card-footer *ngIf="displayAuthorList">
+    <div *ngFor="let author of project.authors || []">
 
-    <div *ngIf="displayAuthorList">
-      <div *ngFor="let author of project.authors || []">
+      <div class="PersonBadge">
+        <gravatar *ngIf="author.email" [email]="author.email" [iconSize]="28"></gravatar>
 
-        <div class="PersonBadge">
-          <gravatar *ngIf="author.email" [email]="author.email" [iconSize]="28"></gravatar>
-          
-          <span class="name" *ngIf="author.name">{{author.name}}</span>
-          <a class="contact" [attr.href]="author.email ? mailto(author.email) : null">{{author.email}}</a>
-        </div>
-
+        <span class="name" *ngIf="author.name">{{author.name}}</span>
+        <a class="contact" [attr.href]="author.email ? mailto(author.email) : null">{{author.email}}</a>
       </div>
-    </div>
 
+    </div>
   </mat-card-footer>
 </mat-card>
