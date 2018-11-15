@@ -1,3 +1,6 @@
+/**
+ * This module is just for convenience and makes all of the Angular Material Components available (unless I missed something)
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -35,7 +38,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 
-
+// use this in your modules's imports
 export const angularMaterialModules = [
   MatAutocompleteModule,
   MatBadgeModule,

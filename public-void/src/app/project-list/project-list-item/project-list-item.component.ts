@@ -8,6 +8,7 @@ import { IProject } from 'src/Logic/IProject';
 })
 export class ProjectListItemComponent implements OnInit {
 
+  @Input() displayAuthorList : boolean = false;
   @Input() project : IProject;
 
   mailto(email: string) : string {
