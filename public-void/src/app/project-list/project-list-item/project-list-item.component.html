@@ -11,16 +11,25 @@
     </div>
   </mat-card-content>
 
-  <mat-card-footer *ngIf="displayAuthorList">
-    <div *ngFor="let author of project.authors || []">
-
-      <div class="PersonBadge">
-        <gravatar *ngIf="author.email" [email]="author.email" [iconSize]="28"></gravatar>
-
-        <span class="name" *ngIf="author.name">{{author.name}}</span>
-        <a class="contact" [attr.href]="author.email ? mailto(author.email) : null">{{author.email}}</a>
-      </div>
-
+  <mat-card-footer *ngIf="displayAuthorList || project.tags != undefined">
+    <div>
+      <span *ngFor="let tag of project.tags || []">
+        {{tag}}
+      </span>
     </div>
+
+    <div *ngIf="displayAuthorList">
+      <div *ngFor="let author of project.authors || []">
+
+        <div class="PersonBadge">
+          <gravatar *ngIf="author.email" [email]="author.email" [iconSize]="28"></gravatar>
+
+          <span class="name" *ngIf="author.name">{{author.name}}</span>
+          <a class="contact" [attr.href]="author.email ? mailto(author.email) : null">{{author.email}}</a>
+        </div>
+
+      </div>
+    </div>
+
   </mat-card-footer>
 </mat-card>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProject } from 'src/Logic/IProject';
-import { ProjectsService } from '../../projects.service';
 import { Observable, of } from 'rxjs';
+import { ProjectsService } from 'src/app/services/projects/projects.service';
 
 @Component({
   selector: 'app-projects-page',

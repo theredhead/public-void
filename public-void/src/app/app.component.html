@@ -1,12 +1,30 @@
-<nav mat-tab-nav-bar>
-    <a mat-tab-link 
-        *ngFor="let link of navLinks" 
-        [routerLink]="'/' + link.path" 
-        routerLinkActive #rla="routerLinkActive"
-        [active]="rla.isActive">
-        <mat-icon *ngIf="link.icon">{{link.icon}}</mat-icon>
-        <span *ngIf="link.label">{{link.label}}</span>
-    </a>
-</nav>
+<header>
+  <app-main-navigation></app-main-navigation>
+</header>
 
-<router-outlet></router-outlet>
+<mat-card>
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+  <mat-card-footer>
+      <div style="display: flex; margin: 1em;">
+          <span style="flex: 1 1 auto;"></span>
+
+          <span style="display: inline-flex">
+            ©
+            <a href="https://www.theredhead.nl" style="margin: 0 .6em;">
+              <img src="/assets/images/theredhead-black-16.png" alt="theredhead" />
+            </a>
+            2018, all rights reserved.
+          </span>
+
+          <span style="flex: 1 1 auto;"></span>
+        </div>
+  </mat-card-footer>
+</mat-card>
+
+<footer>
+  <div style="display: flex; margin: 1em;">
+
+  </div>
+</footer>

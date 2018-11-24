@@ -3,9 +3,11 @@ export interface IAuthor {
     email: string,
 }
 export interface IProject {
-    name: string;
-    href?: string;
-    demo?: string,
-    description?: string
-    authors?: IAuthor[]
-}  
+  platform?: string;
+  tags?: string[];
+  name: string;
+  href?: string;
+  demo?: string;
+  description?: string;
+  authors?: IAuthor[];
+}

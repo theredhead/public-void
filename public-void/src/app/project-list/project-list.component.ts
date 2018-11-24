@@ -8,7 +8,7 @@ import { IProject } from 'src/Logic/IProject';
 })
 export class ProjectListComponent implements OnInit {
 
-  @Input() items : IProject[] = [];
+  @Input() items: IProject[] = [];
 
   constructor() { }
 

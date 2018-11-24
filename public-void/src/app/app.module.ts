@@ -14,6 +14,9 @@ import { MarkdownModule } from './markdown/markdown.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     ProjectListItemComponent,
     HomePageComponent,
     ProjectsPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    MainNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,13 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     FormsModule,
     GravatarModule,
     MarkdownModule,
-    ...angularMaterialModules
+    ...angularMaterialModules,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <mat-toolbar-row>
+    <button mat-button style="display: inline-flex" routerLink="/">
+      <img src="/assets/images/red.png" alt="theredhead" />
+    </button>
+
+    <button mat-button style="display: inline-flex" routerLink="/projects">
+      Projects
+    </button>
+
+    <span style="flex: 1 1 auto;"></span>
+
+    <button mat-button style="display: inline-flex" [matMenuTriggerFor]="settingsMenu">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-menu #settingsMenu="matMenu">
+      <button *ngIf="!membership.isAuthenticated" mat-menu-item>
+        <mat-icon>input</mat-icon>
+        Login
+      </button>
+      <button *ngIf="!membership.isAuthenticated" mat-menu-item>
+        <mat-icon>adjust</mat-icon>
+        Sign up
+      </button>
+      <button *ngIf="membership.isAuthenticated" mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        My Account
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item routerLink="/support">
+        <mat-icon>help</mat-icon>
+        Help
+      </button>
+      <mat-divider></mat-divider>
+      <a mat-menu-item href="mailto:kris@theredhead.nl?subject=I ran into an issue using ypur application">
+        <mat-icon>bug_report</mat-icon>
+        Report an issue
+      </a>
+    </mat-menu>
+
+  </mat-toolbar-row>
+</mat-toolbar>
