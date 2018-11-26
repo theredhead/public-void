@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from './services/navigation/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'public-void';
+
+  public get navigation() {
+    return this._navigation;
+  }
+  constructor(private _navigation: NavigationService) {
+  }
 }

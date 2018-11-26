@@ -17,6 +17,11 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { CreditsPageComponent } from './pages/credits-page/credits-page.component';
+import { MacOsPageComponent } from './pages/software/mac-os-page/mac-os-page.component';
+import { WindowsPageComponent } from './pages/software/windows-page/windows-page.component';
+import { WebPageComponent } from './pages/software/web-page/web-page.component';
+import { SupportPageComponent } from './pages/software/support-page/support-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     HomePageComponent,
     ProjectsPageComponent,
     NotFoundPageComponent,
-    MainNavigationComponent
+    MainNavigationComponent,
+    CreditsPageComponent,
+    MacOsPageComponent,
+    WindowsPageComponent,
+    WebPageComponent,
+    SupportPageComponent
   ],
   imports: [
     BrowserModule,

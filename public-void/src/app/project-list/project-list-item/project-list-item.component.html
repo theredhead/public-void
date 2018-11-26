@@ -1,7 +1,9 @@
-<mat-card>
-  <mat-card-title>
-    <a [attr.href]="project.href ? project.href : null">{{project.name}}</a>
-  </mat-card-title>
+<mat-card class="mat-elevation-z3">
+  <mat-card-header>
+    <mat-card-title>
+      <a [attr.href]="project.href ? project.href : null">{{project.name}}</a>
+    </mat-card-title>
+  </mat-card-header>
 
   <mat-card-content>
     <div [innerHTML]="project.description | md"></div>
@@ -13,7 +15,7 @@
 
   <mat-card-footer *ngIf="displayAuthorList || project.tags != undefined">
     <div>
-      <span *ngFor="let tag of project.tags || []">
+      <span *ngFor="let tag of project.tags || []" class="token">
         {{tag}}
       </span>
     </div>

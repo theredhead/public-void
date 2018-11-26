@@ -1,30 +1,89 @@
 <header>
-  <app-main-navigation></app-main-navigation>
+  <app-main-navigation [sideMenu]="leftSidebar" [shareMenu]="rightSidebar">
+
+  </app-main-navigation>
 </header>
 
-<mat-card>
-  <mat-card-content>
-    <router-outlet></router-outlet>
-  </mat-card-content>
-  <mat-card-footer>
-      <div style="display: flex; margin: 1em;">
+<mat-sidenav-container>
+  <mat-sidenav #leftSidebar position="start" mode="push">
+
+      <nav>
+        <div *ngFor="let item of navigation.mainMenu">
+          <span [ngSwitch]="item.label">
+
+            <span *ngSwitchCase="'-'">
+                <mat-divider></mat-divider>
+            </span>
+
+            <a mat-button *ngSwitchDefault mat-button routerLink="{{item.routerLink}}" style="display: block; flex: 1; text-align: left;">
+              <span style="margin-left: -1em; flex: 1;" class="{{ item.icon }}"></span>
+              {{ item.label }}
+            </a>
+
+          </span>
+        </div>
+      </nav>
+
+  </mat-sidenav>
+  <mat-sidenav #rightSidebar position="end" mode="push">
+
+      <nav>
+        <div *ngFor="let item of navigation.shareMenu">
+          <span [ngSwitch]="item.label">
+
+            <span *ngSwitchCase="'-'">
+                <mat-divider></mat-divider>
+            </span>
+
+            <a mat-button *ngSwitchDefault mat-button routerLink="{{item.routerLink}}" style="display: block; flex: 1; text-align: left;">
+              <span class="{{ item.icon }}"></span>
+              {{ item.label }}
+            </a>
+
+          </span>
+        </div>
+      </nav>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-card>
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+      <mat-card-footer>
+
+        <div style="display: flex; margin: 1em;">
           <span style="flex: 1 1 auto;"></span>
 
-          <span style="display: inline-flex">
+          <div style="display: inline-flex">
             ©
             <a href="https://www.theredhead.nl" style="margin: 0 .6em;">
-              <img src="/assets/images/theredhead-black-16.png" alt="theredhead" />
+              <img
+                src="/assets/images/theredhead-black-16.png"
+                alt="theredhead"
+              />
             </a>
             2018, all rights reserved.
-          </span>
+          </div>
 
           <span style="flex: 1 1 auto;"></span>
         </div>
-  </mat-card-footer>
-</mat-card>
 
-<footer>
-  <div style="display: flex; margin: 1em;">
+        <div style="display: flex; margin: 1em;">
+          <span style="flex: 1 1 auto;"></span>
+          <div>
+            <a routerLink="/credits">Credits</a>
+          </div>
+          <span style="flex: 1 1 auto;"></span>
+        </div>
 
-  </div>
-</footer>
+        <button mat-button (click)="leftSidebar.toggle()">left</button>
+        <button mat-button (click)="rightSidebar.toggle()">right</button>
+
+      </mat-card-footer>
+    </mat-card>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<footer><div style="display: flex; margin: 1em;"></div></footer>

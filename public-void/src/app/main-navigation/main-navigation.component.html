@@ -1,5 +1,9 @@
 <mat-toolbar color="primary" class="mat-elevation-z4">
   <mat-toolbar-row>
+    <button *ngIf="sideMenu" mat-button style="display: inline-flex" (click)="sideMenu.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
     <button mat-button style="display: inline-flex" routerLink="/">
       <img src="/assets/images/red.png" alt="theredhead" />
     </button>

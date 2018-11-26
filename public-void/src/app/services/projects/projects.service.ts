@@ -70,7 +70,7 @@ export class ProjectsService {
       name: 'ImageBase64',
       platform: 'Mac OS X',
       tags: ['application', 'development'],
-      href: 'https://github.com/theredhead/XSLTool',
+      href: 'https://github.com/theredhead/ImageBase64',
       description: `A simple drang and drop tool to create css embeddable image resources from images on your computer.`,
       authors: [
         {
