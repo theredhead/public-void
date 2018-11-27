@@ -5,7 +5,7 @@
     </mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content style="padding: .5em 1em;">
     <div [innerHTML]="project.description | md"></div>
 
     <div *ngIf="project.demo" style="text-align: right;">
@@ -13,7 +13,7 @@
     </div>
   </mat-card-content>
 
-  <mat-card-footer *ngIf="displayAuthorList || project.tags != undefined">
+  <mat-card-footer *ngIf="displayAuthorList || project.tags != undefined" style="padding: .5em 2em;">
     <div>
       <span *ngFor="let tag of project.tags || []" class="token">
         {{tag}}

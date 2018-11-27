@@ -8,12 +8,27 @@ export class NavigationService {
 
   mainMenu: INavigationItem[] = [
     {
-      icon: 'flaticon-apple',
+      icon: 'home',
+      routerLink: '/home',
+      label: 'Home',
+    },
+    {
+      icon: '',
+      routerLink: '',
+      label: '-',
+    },
+    {
+      icon: 'cloud',
+      routerLink: '/software/web',
+      label: 'Web software',
+    },
+    {
+      icon: 'apple-logo',
       routerLink: '/software/mac',
       label: 'macOS Software',
     },
     {
-      icon: 'flaticon-windows',
+      icon: 'windows',
       routerLink: '/software/win',
       label: 'Windows Software',
     },
@@ -23,17 +38,7 @@ export class NavigationService {
       label: '-',
     },
     {
-      icon: 'flaticon-029-cloud-1',
-      routerLink: '/software/web',
-      label: 'Web',
-    },
-    {
-      icon: '',
-      routerLink: '',
-      label: '-',
-    },
-    {
-      icon: 'flaticon-softtware-engineer',
+      icon: 'softtware-engineer',
       routerLink: '/software/web',
       label: 'Support',
     },
@@ -41,12 +46,12 @@ export class NavigationService {
 
   shareMenu: INavigationItem[] = [
     {
-      icon: 'flaticon-021-twitter',
+      icon: 'twitter-black-shape',
       routerLink: '',
       label: 'Twitter'
     },
     {
-      icon: 'flaticon-043-facebook',
+      icon: 'facebook-logo-1',
       routerLink: '',
       label: 'Facebook'
     },

@@ -4,78 +4,51 @@
   </app-main-navigation>
 </header>
 
-<mat-sidenav-container>
-  <mat-sidenav #leftSidebar position="start" mode="push">
+<mat-drawer-container style="height: 100%;">
+  <mat-drawer position="start" #leftSidebar mode="side" opened="true">
 
-      <nav>
-        <div *ngFor="let item of navigation.mainMenu">
-          <span [ngSwitch]="item.label">
+    <div style="margin: 1em auto; text-align: center;">
+      <button mat-button routerLink="/">
+        <img src="/assets/images/red.png" alt="theredhead" />
+      </button>
+      <div>
+        <button mat-button (click)="rightSidebar.toggle()">
+          <app-icon icon="cog-wheel-silhouette" size="16"></app-icon>
+        </button>
+      </div>
+    </div>
 
-            <span *ngSwitchCase="'-'">
-                <mat-divider></mat-divider>
-            </span>
+    <nav>
+      <div *ngFor="let item of navigation.mainMenu" [ngSwitch]="item.label">
+        <mat-divider *ngSwitchCase="'-'"></mat-divider>
 
-            <a mat-button *ngSwitchDefault mat-button routerLink="{{item.routerLink}}" style="display: block; flex: 1; text-align: left;">
-              <span style="margin-left: -1em; flex: 1;" class="{{ item.icon }}"></span>
-              {{ item.label }}
-            </a>
+        <button *ngSwitchDefault mat-menu-item routerLink="{{item.routerLink}}">
+          <app-icon style="vertical-align: middle;" [icon]="item.icon" [size]="18"></app-icon>
+          {{ item.label }}
+        </button>
+      </div>
+    </nav>
+  </mat-drawer>
+  <mat-drawer position="end" #rightSidebar mode="side">
 
-          </span>
+    <nav>
+        <div *ngFor="let item of navigation.shareMenu" [ngSwitch]="item.label">
+          <mat-divider *ngSwitchCase="'-'"></mat-divider>
+
+          <button *ngSwitchDefault mat-menu-item routerLink="{{item.routerLink}}">
+            <app-icon style="vertical-align: middle;" [icon]="item.icon" [size]="18"></app-icon>
+            {{ item.label }}
+          </button>
         </div>
       </nav>
 
-  </mat-sidenav>
-  <mat-sidenav #rightSidebar position="end" mode="push">
-
-      <nav>
-        <div *ngFor="let item of navigation.shareMenu">
-          <span [ngSwitch]="item.label">
-
-            <span *ngSwitchCase="'-'">
-                <mat-divider></mat-divider>
-            </span>
-
-            <a mat-button *ngSwitchDefault mat-button routerLink="{{item.routerLink}}" style="display: block; flex: 1; text-align: left;">
-              <span class="{{ item.icon }}"></span>
-              {{ item.label }}
-            </a>
-
-          </span>
-        </div>
-      </nav>
-
-  </mat-sidenav>
-  <mat-sidenav-content>
+  </mat-drawer>
+  <mat-drawer-content style="height: 100%;">
     <mat-card>
       <mat-card-content>
         <router-outlet></router-outlet>
       </mat-card-content>
       <mat-card-footer>
-
-        <div style="display: flex; margin: 1em;">
-          <span style="flex: 1 1 auto;"></span>
-
-          <div style="display: inline-flex">
-            ©
-            <a href="https://www.theredhead.nl" style="margin: 0 .6em;">
-              <img
-                src="/assets/images/theredhead-black-16.png"
-                alt="theredhead"
-              />
-            </a>
-            2018, all rights reserved.
-          </div>
-
-          <span style="flex: 1 1 auto;"></span>
-        </div>
-
-        <div style="display: flex; margin: 1em;">
-          <span style="flex: 1 1 auto;"></span>
-          <div>
-            <a routerLink="/credits">Credits</a>
-          </div>
-          <span style="flex: 1 1 auto;"></span>
-        </div>
 
         <button mat-button (click)="leftSidebar.toggle()">left</button>
         <button mat-button (click)="rightSidebar.toggle()">right</button>
@@ -83,7 +56,9 @@
       </mat-card-footer>
     </mat-card>
 
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <footer><div style="display: flex; margin: 1em;"></div></footer>
+      <app-site-footer></app-site-footer>
+    <br />
 
-<footer><div style="display: flex; margin: 1em;"></div></footer>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -22,6 +22,8 @@ import { MacOsPageComponent } from './pages/software/mac-os-page/mac-os-page.com
 import { WindowsPageComponent } from './pages/software/windows-page/windows-page.component';
 import { WebPageComponent } from './pages/software/web-page/web-page.component';
 import { SupportPageComponent } from './pages/software/support-page/support-page.component';
+import { SiteFooterComponent } from './site-footer/site-footer.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SupportPageComponent } from './pages/software/support-page/support-page
     MacOsPageComponent,
     WindowsPageComponent,
     WebPageComponent,
-    SupportPageComponent
+    SupportPageComponent,
+    SiteFooterComponent,
+    IconComponent
   ],
   imports: [
     BrowserModule,

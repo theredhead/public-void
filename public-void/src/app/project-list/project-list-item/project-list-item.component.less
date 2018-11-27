@@ -1,22 +1,33 @@
 :host {
-    .PersonBadge {
-        display: inline-block;
-        vertical-align: middle;
-    
-        .gravatar {
-            border-radius: 50%;
-        }
-    
-        .name {
-            display: block;
-            white-space: nowrap;
-            font-size: 90%;
-        }
-        .contact {
-            display: block;
-            white-space: nowrap;
-            font-size: 75%
-        }
+
+  a:link, a:visited, a:active, a:hover {
+    color: black;
+    text-decoration: none;
+    border-bottom: dotted 1px red;
+  }
+  a:hover {
+    color: red;
+    border-bottom: solid 2px red;
+  }
+
+  .PersonBadge {
+    display: inline-block;
+    vertical-align: middle;
+
+    .gravatar {
+        border-radius: 50%;
     }
+
+    .name {
+        display: block;
+        white-space: nowrap;
+        font-size: 90%;
+    }
+    .contact {
+        display: block;
+        white-space: nowrap;
+        font-size: 75%
+    }
+  }
 }
 
