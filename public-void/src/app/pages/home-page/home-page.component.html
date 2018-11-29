@@ -6,3 +6,26 @@
 <p>
   This is a showcase, <a routerLink="/projects">the interesting bits are here.</a> for now, until I get the site sorted.
 </p>
+
+<div>
+  <!-- <input tyoe="search" [(ngModel)]="searchText" /> -->
+  <div>
+    <label>Filter:</label>
+    <input matInput type="search" placeholder="search..." [(ngModel)]="searchText" /> {{ filteredIconCount }} items
+  </div>
+  <div>
+    <label>Size:</label>
+    <input type="range" min="20" max="512" [(ngModel)]="iconSize" />
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap;">
+
+  <div *ngFor="let icon of filteredIcons | keyvalue"
+   style="flex: 1 0 20%; text-align: center; margin: 20px 0; padding: 0;">
+    <img [src]="sanitizer.bypassSecurityTrustResourceUrl(icon.value)" [alt]="icon.key" [width]="iconSize" [height]="iconSize" style="margin: 10px;" />
+    <br >
+    {{icon.key}}
+  </div>
+
+</div>

@@ -24,6 +24,7 @@ import { WebPageComponent } from './pages/software/web-page/web-page.component';
 import { SupportPageComponent } from './pages/software/support-page/support-page.component';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { IconComponent } from './icon/icon.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { IconComponent } from './icon/icon.component';
     WebPageComponent,
     SupportPageComponent,
     SiteFooterComponent,
-    IconComponent
+    IconComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
