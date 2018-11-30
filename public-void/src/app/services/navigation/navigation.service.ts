@@ -8,7 +8,7 @@ export class NavigationService {
 
   mainMenu: INavigationItem[] = [
     {
-      icon: 'home',
+      icon: 'EssentialSet_House',
       routerLink: '/home',
       label: 'Home',
     },
@@ -18,17 +18,17 @@ export class NavigationService {
       label: '-',
     },
     {
-      icon: 'cloud',
+      icon: 'EssentialSet_Server_1',
       routerLink: '/software/web',
       label: 'Web software',
     },
     {
-      icon: 'apple-logo',
+      icon: 'ComputerIcons_Apple_laptop_computer',
       routerLink: '/software/mac',
       label: 'macOS Software',
     },
     {
-      icon: 'windows',
+      icon: 'ComputerIcons_Laptop_13',
       routerLink: '/software/win',
       label: 'Windows Software',
     },
@@ -38,7 +38,7 @@ export class NavigationService {
       label: '-',
     },
     {
-      icon: 'softtware-engineer',
+      icon: 'WebHosting_Tech_support',
       routerLink: '/software/web',
       label: 'Support',
     },
@@ -46,14 +46,19 @@ export class NavigationService {
 
   shareMenu: INavigationItem[] = [
     {
-      icon: 'twitter-black-shape',
+      icon: 'SocialMedia_Twitter',
       routerLink: '',
       label: 'Twitter'
     },
     {
-      icon: 'facebook-logo-1',
+      icon: 'SocialMedia_Facebook',
       routerLink: '',
       label: 'Facebook'
+    },
+    {
+      icon: 'SocialMedia_Linkedin',
+      routerLink: '',
+      label: 'LinkedIn'
     },
   ];
   constructor() { }

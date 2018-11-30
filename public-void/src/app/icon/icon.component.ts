@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import * as _icons from 'src/assets/icons/icons';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-icon',
@@ -12,7 +14,7 @@ export class IconComponent implements OnInit {
   @Input() size = 24;
 
   public get imageHref() {
-    return '/assets/icons/' + this.icon + '.png';
+    return this.sanitizer.bypassSecurityTrustResourceUrl(_icons[this.icon]);
   }
 
   public get alternateText() {
@@ -21,7 +23,7 @@ export class IconComponent implements OnInit {
       : this.icon;
   }
 
-  constructor() { }
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
