@@ -1,0 +1,11 @@
+<cdk-virtual-scroll-viewport [itemSize]="itemSize" #root
+  [style.width]="parentWidth" style="margin: 0; padding: 0; border: none; box-sizing: border-box;"
+  [style.height]="parentHeight"
+
+  style=" height: 512px; width: 512px; border: solid 1px black;">
+    <div *cdkVirtualFor="let item of items; let i = index">
+      <ng-template
+        [ngTemplateOutlet]="itemTemplate"
+        [ngTemplateOutletContext]="{ $implicit: item }"></ng-template>
+    </div>
+ </cdk-virtual-scroll-viewport>

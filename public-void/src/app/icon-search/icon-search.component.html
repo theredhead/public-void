@@ -1,0 +1,26 @@
+<div>
+  <label>Filter:</label>
+  <input matInput type="search" placeholder="search..." [(ngModel)]="searchText" /> {{ filteredIconCount }} items
+</div>
+<div>
+  <label>Size:</label>
+  <input type="range" min="20" max="512" [(ngModel)]="iconSize" />
+</div>
+
+<div style="display: flex; flex-wrap: wrap;">
+  <app-virtual-scroll [items]="filteredIcons" [itemSize]="iconSize">
+    <ng-template let-item>
+
+      <img
+        [src]="sanitizer.bypassSecurityTrustResourceUrl(item.icon)"
+        [alt]="item.name"
+        [title]="item.name"
+        [width]="iconSize"
+        [height]="iconSize"
+        style="margin: 10px;" />
+      <span>
+        {{item.name}}
+      </span>
+    </ng-template>
+  </app-virtual-scroll>
+</div>

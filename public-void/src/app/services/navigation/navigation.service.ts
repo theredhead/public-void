@@ -23,12 +23,12 @@ export class NavigationService {
       label: 'Web software',
     },
     {
-      icon: 'ComputerIcons_Apple_laptop_computer',
+      icon: 'SocialMedia_Apple',
       routerLink: '/software/mac',
       label: 'macOS Software',
     },
     {
-      icon: 'ComputerIcons_Laptop_13',
+      icon: 'SocialMedia_Windows',
       routerLink: '/software/win',
       label: 'Windows Software',
     },

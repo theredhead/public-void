@@ -25,6 +25,11 @@ import { SupportPageComponent } from './pages/software/support-page/support-page
 import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { IconComponent } from './icon/icon.component';
 import { FilterPipe } from './filter.pipe';
+import { IconSearchComponent } from './icon-search/icon-search.component';
+
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +47,9 @@ import { FilterPipe } from './filter.pipe';
     SupportPageComponent,
     SiteFooterComponent,
     IconComponent,
-    FilterPipe
+    FilterPipe,
+    IconSearchComponent,
+    VirtualScrollComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,8 @@ import { FilterPipe } from './filter.pipe';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
