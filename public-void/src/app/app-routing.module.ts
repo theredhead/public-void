@@ -8,10 +8,12 @@ import { MacOsPageComponent } from './pages/software/mac-os-page/mac-os-page.com
 import { WindowsPageComponent } from './pages/software/windows-page/windows-page.component';
 import { WebPageComponent } from './pages/software/web-page/web-page.component';
 import { SupportPageComponent } from './pages/software/support-page/support-page.component';
+import { DesignerPageComponent } from './pages/designer-page/designer-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'projects', component: ProjectsPageComponent },
+  { path: 'designer', component: DesignerPageComponent },
 
   { path: 'software/mac', component: MacOsPageComponent },
   { path: 'software/win', component: WindowsPageComponent },

@@ -8,7 +8,7 @@ export class NavigationService {
 
   mainMenu: INavigationItem[] = [
     {
-      icon: 'EssentialSet_House',
+      icon: 'EssentialSet_Home',
       routerLink: '/home',
       label: 'Home',
     },
@@ -18,7 +18,7 @@ export class NavigationService {
       label: '-',
     },
     {
-      icon: 'EssentialSet_Server_1',
+      icon: 'EssentialSet_Cloud',
       routerLink: '/software/web',
       label: 'Web software',
     },

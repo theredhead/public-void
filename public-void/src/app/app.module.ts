@@ -29,6 +29,8 @@ import { IconSearchComponent } from './icon-search/icon-search.component';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.component';
+import { DesignerPageComponent } from './pages/designer-page/designer-page.component';
+import { DocumentViewComponent } from './pages/designer-page/document-view/document-view.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { VirtualScrollComponent } from './virtual-scroll/virtual-scroll.componen
     IconComponent,
     FilterPipe,
     IconSearchComponent,
-    VirtualScrollComponent
+    VirtualScrollComponent,
+    DesignerPageComponent,
+    DocumentViewComponent
   ],
   imports: [
     BrowserModule,
